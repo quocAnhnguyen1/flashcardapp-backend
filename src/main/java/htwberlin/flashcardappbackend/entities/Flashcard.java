@@ -10,19 +10,19 @@ public class Flashcard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fach;
-    private String thema;
-    private String frage;
-    private String antwort;
+    private String subject;
+    private String topic;
+    private String question;
+    private String answer;
     private int rating;
 
     public Flashcard() {};
 
-    public Flashcard (String fach, String thema, String frage, String antwort, int rating) {
-        this.fach = fach;
-        this.thema = thema;
-        this.frage = frage;
-        this.antwort = antwort;
+    public Flashcard (String subject, String topic, String question, String answer, int rating) {
+        this.subject = subject;
+        this.topic = topic;
+        this.question = question;
+        this.answer = answer;
         this.rating = rating;
     }
 
@@ -34,36 +34,36 @@ public class Flashcard {
         this.id = id;
     }
 
-    public String getFach() {
-        return fach;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setFach(String fach) {
-        this.fach = fach;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public String getThema() {
-        return thema;
+    public String getTopic() {
+        return topic;
     }
 
-    public void setThema(String thema) {
-        this.thema = thema;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
-    public String getFrage() {
-        return frage;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setFrage(String frage) {
-        this.frage = frage;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    public String getAntwort() {
-        return antwort;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setAntwort(String antwort) {
-        this.antwort = antwort;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
     public int getRating() {
@@ -79,22 +79,22 @@ public class Flashcard {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Flashcard flashcard = (Flashcard) o;
-        return rating == flashcard.rating && Objects.equals(id, flashcard.id) && Objects.equals(fach, flashcard.fach) && Objects.equals(thema, flashcard.thema) && Objects.equals(frage, flashcard.frage) && Objects.equals(antwort, flashcard.antwort);
+        return rating == flashcard.rating && Objects.equals(id, flashcard.id) && Objects.equals(subject, flashcard.subject) && Objects.equals(topic, flashcard.topic) && Objects.equals(question, flashcard.question) && Objects.equals(answer, flashcard.answer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fach, thema, frage, antwort, rating);
+        return Objects.hash(id, subject, topic, question, answer, rating);
     }
 
     @Override
     public String toString() {
         return "Flashcard{" +
                 "id=" + id +
-                ", fach='" + fach + '\'' +
-                ", thema='" + thema + '\'' +
-                ", frage='" + frage + '\'' +
-                ", antwort='" + antwort + '\'' +
+                ", subject='" + subject + '\'' +
+                ", topic='" + topic + '\'' +
+                ", question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
                 ", rating=" + rating +
                 '}';
     }
