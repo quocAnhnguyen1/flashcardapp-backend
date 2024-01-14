@@ -41,5 +41,25 @@ public class FlashcardController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting flashcard");
         }
     }
+/*
+    @GetMapping("/sortedByTopic")
+    public List<Flashcard> getFlashcardOrderedByTopic(){
+        return service.getAllOrderedByTopic();
+    }
+    @GetMapping("/sortedBySubject")
+    public List<Flashcard> getFlashcardOrderedBySubject(){
+        return service.getAllOrderedBySubject();
+    }
+    @GetMapping("/sortedByRating")
+    public List<Flashcard> getFlashcardOrderedByRating(){
+        return service.getAllOrderedByRating();
+    }
+
+    @GetMapping("/flashcards/sorted")
+    public ResponseEntity<List<Flashcard>> getAllSorted(@RequestParam(required = false, defaultValue = "") List<String> sortBy) {
+        System.out.println("Sorting Parameter: " + sortBy);
+        List<Flashcard> flashcards = service.getAllSorted(sortBy);
+        return new ResponseEntity<>(flashcards, HttpStatus.OK);
+    }*/
 }
 

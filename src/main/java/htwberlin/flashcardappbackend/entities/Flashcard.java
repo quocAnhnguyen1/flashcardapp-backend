@@ -16,7 +16,7 @@ public class Flashcard {
     private String answer;
     private int rating;
 
-    public Flashcard() {};
+    public Flashcard(long l, String testSubject, String testTopic, String testQuestion, String testAnswer, int i, boolean b) {};
 
     public Flashcard (String subject, String topic, String question, String answer, int rating) {
         this.subject = subject;
