@@ -29,5 +29,7 @@ public class FlashcardService {
         for (Flashcard flashcard : iterator)  flashcards.add(flashcard);
         return flashcards;
     }
-
+    public void deleteFlashcard(Long id){
+        repo.deleteById(id);
+    }
 }

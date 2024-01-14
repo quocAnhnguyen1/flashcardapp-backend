@@ -2,6 +2,8 @@ package htwberlin.flashcardappbackend.controller;
 
 import htwberlin.flashcardappbackend.entities.Flashcard;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.*;
 import htwberlin.flashcardappbackend.services.FlashcardService;
@@ -28,6 +30,16 @@ public class FlashcardController {
     @GetMapping("/flashcards")
     public List<Flashcard> getAllFlashcards() {
         return service.getAll();
+    }
+
+    @DeleteMapping("/flashcards/{id}")
+    public ResponseEntity<String> deleteFlashcard(@PathVariable Long id) {
+        try {
+            service.deleteFlashcard(id);
+            return ResponseEntity.ok("Flashcard deleted successfully");
+        } catch(Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting flashcard");
+        }
     }
 }
 
